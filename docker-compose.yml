@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  flaskapp:
+    build: ./services/flask
+    ports:
+      - "8000:8000"
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DB=${MYSQL_DB}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+  
