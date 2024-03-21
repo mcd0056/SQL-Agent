@@ -5,7 +5,7 @@ engine = create_engine('sqlite:///database.db')
 metadata = MetaData()
 
 # Define the table structure
-predefined_responses = Table('predefined_responses', metadata,
+predefined_responses = Table('responses', metadata,
                              Column('id', Integer, primary_key=True),
                              Column('response_text', String),
                              Column('keyword', String))

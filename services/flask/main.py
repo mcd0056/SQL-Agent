@@ -13,7 +13,7 @@ from langchain.tools.render import format_tool_to_openai_function
 from langchain.agents.format_scratchpad import format_to_openai_function_messages
 from langchain.agents.output_parsers import OpenAIFunctionsAgentOutputParser
 from typing import Any
-from model import db, PredefinedResponse
+from model import db, Response
 
 
 app = Flask(__name__)
@@ -40,7 +40,7 @@ def query_database(message):
         user_keywords = set(lower_message.split())
 
         # Ensure db.session is used in a Flask app context if needed
-        all_responses = PredefinedResponse.query.all()
+        all_responses = Response.query.all()
 
         best_response = None
         highest_match_count = 0
